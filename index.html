@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronometer — Digital Clock &amp; Stopwatch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="eyebrow">Task 02 — Timekeeping Module</span>
+    <h1>Chrono<span>meter</span></h1>
+  </div>
+  <div class="status"><span class="dot"></span>Local time synced</div>
+</header>
+
+<main>
+  <!-- CLOCK -->
+  <section class="instrument">
+    <div class="instrument-head">
+      <span class="instrument-label"><b>Clock</b> · Live</span>
+      <span class="instrument-tag tag-amber">HH:MM:SS</span>
+    </div>
+    <div class="screen">
+      <div class="digits" id="clock-digits">--<span class="sep">:</span>--<span class="sep">:</span>--</div>
+      <div class="meta-row">
+        <span id="clock-date">—</span>
+        <span id="clock-zone">—</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOPWATCH -->
+  <section class="instrument">
+    <div class="instrument-head">
+      <span class="instrument-label"><b>Stopwatch</b> · Manual</span>
+      <span class="instrument-tag tag-cyan">MM:SS.CS</span>
+    </div>
+    <div class="screen">
+      <div class="digits" id="stopwatch-digits">00<span class="sep">:</span>00<span class="ms">.00</span></div>
+      <div class="meta-row">
+        <span id="sw-state">Ready</span>
+        <span id="sw-laps-count">0 laps</span>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="primary" id="btn-start">Start</button>
+      <button id="btn-lap" disabled>Lap</button>
+      <button class="warn" id="btn-reset">Reset</button>
+    </div>
+    <div class="laps" id="laps"></div>
+  </section>
+</main>
+
+<footer>
+  <span>setInterval-driven · state kept in memory</span>
+  <span id="footer-clock">00:00:00</span>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
